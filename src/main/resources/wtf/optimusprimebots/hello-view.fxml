@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="wtf.optimusprimebots.ui.BotControlUI">
+    <TabPane prefHeight="600" prefWidth="800">
+        <Tab text="Chat Listener">
+            <AnchorPane>
+                <TextArea fx:id="chatLogArea" editable="false" layoutX="10" layoutY="10" prefHeight="200" prefWidth="760" wrapText="true" />
+                <TextField fx:id="messageTextField" layoutX="10" layoutY="220" prefWidth="640" />
+                <Button fx:id="sendMessageButton" layoutX="660" layoutY="220" onAction="#sendMessage" text="Send" />
+            </AnchorPane>
+        </Tab>
+
+        <Tab text="Bot Activity">
+            <AnchorPane>
+                <ListView fx:id="botActivityList" layoutX="10" layoutY="10" prefHeight="200" prefWidth="760" />
+                <TextArea fx:id="errorLogArea" editable="false" layoutX="10" layoutY="220" prefHeight="200" prefWidth="760" wrapText="true" />
+            </AnchorPane>
+        </Tab>
+
+        <Tab text="Server Statistics">
+            <AnchorPane>
+                <TextArea fx:id="serverStatsArea" editable="false" layoutX="10" layoutY="10" prefHeight="200" prefWidth="760" wrapText="true" />
+            </AnchorPane>
+        </Tab>
+      <Tab text="Control bot">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField id="hostField" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="118.0" />
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Host" wrappingWidth="37.708984375">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="141.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" wrappingWidth="37.708984375">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField id="portField" layoutX="141.0" layoutY="38.0" prefHeight="25.0" prefWidth="118.0" />
+                  <Text layoutX="268.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="68.708984375">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField id="nameField" layoutX="268.0" layoutY="38.0" prefHeight="25.0" prefWidth="118.0" />
+                  <Button id="addBotBtn" layoutX="400.0" layoutY="16.0" mnemonicParsing="false" onAction="#addBot" prefHeight="45.0" prefWidth="100.0" text="Add bot">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <CheckBox id="rageBot" layoutX="18.0" layoutY="88.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="110.0" text="Rage bot">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox id="spamTheChat" layoutX="18.0" layoutY="137.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="172.0" text="Spam the chat">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <TextArea id="textForSpam" layoutX="14.0" layoutY="210.0" prefHeight="144.0" prefWidth="200.0" />
+                  <Text layoutX="14.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text for spam" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    </TabPane>
+</AnchorPane>
